@@ -1,0 +1,26 @@
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: whitesmoke
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1500829243541-74b677fecc30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80");
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+  
+  .wrapped-iframe {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    border: 0;
+  }

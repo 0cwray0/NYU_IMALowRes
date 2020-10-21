@@ -1,0 +1,70 @@
+/* --Kinda runs--
+iframe {
+    /*width: 560px;
+    height: 95%;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+*/
+
+/*
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+*/
+
+/*.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+
+.video {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.video div {
+  width: 100px;
+  height: 100px;
+}
+
+.video-container embed {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.video-container div {
+  width: 100px;
+  height: 100px;
+}
+
+/*
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+
+.container{
+    justify-content: center;
+    align-items: stretch;
+}
+
+.container div {
+  width: 100px;
+  height: 100px;
+}
