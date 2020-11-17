@@ -1,0 +1,82 @@
+body {
+    background-image: url("https://media.giphy.com/media/4a7sWil1NZoRWymHJp/source.gif");
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #FBF4F4;
+    text-shadow: -1px 1px 0 #000;
+}
+
+.strokes{
+    position: relative;
+    align-items: flex-start;
+}
+
+.stroke_width_picker{
+    position: relative;
+    align-items: flex-start;
+}
+
+.mandalas {
+    position: relative;
+    align-items: flex-start;
+}
+
+.shape {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+}
+
+.shape.diamond {
+    width: 46px;
+    height: 44px;
+    background: url("/images/Mandala1.gif");
+    background-position: center;
+}
+
+.shape.circle {
+    width: 46px;
+    height: 44px;
+    background-image: url("/images/Mandala2.gif");
+    background-position: center;
+}
+
+.shape.square {
+    width: 46px;
+    height: 44px;
+    background-image: url("/images/Mandala3.png");
+    background-position: center;
+}
+
+.shape.happy {
+    width: 46px;
+    height: 44px;
+    background-image: url("/images/Mandala4.png");
+    background-position: center;
+}
+
+.shape.grand {
+    width: 46px;
+    height: 44px;
+    background-image: url("/images/Mandala5.png");
+    background-position: center;
+}
+
+/*input.call-picker {
+    background-color: white;
+  }
+  
+  .color-picker {
+
+  }
+  
+  .color-holder {
+
+  }
+  
+  input.stroke_width_picker {
+
+  } */

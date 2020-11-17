@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <!--<script src="app.js"></script>-->
+    <link href="style.css" rel="stylesheet">
+    </link>
+    <title>Drawing with Socekts and p5</title>
+</head>
+
+<body>
+    <!--<p>Choose color (# hex)</p>
+    <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
+    <div id="color-holder" class="color-holder call-picker"></div>
+    <button id="color-btn">Change color</button>-->
+    <br/>
+
+    <div class="strokes">
+    <p>Choose stroke width</p>
+    <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
+    <button id="stroke-button">Change stroke width</button>
+    </div>
+
+    <div class="mandalas">
+        <!--<p>Choose mandala type</p> -->
+        <div class="shape diamond"></div>
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape happy"></div>
+        <div class="shape grand"></div>
+      </div>
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+</body>
+
+</html>

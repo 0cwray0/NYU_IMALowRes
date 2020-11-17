@@ -1,0 +1,130 @@
+//Open and connect socket
+let socket = io();
+
+let color = '#FFF';
+let strokeWidth = 4;
+
+//Listen for confirmation of connection
+socket.on('connect', function() {
+  console.log("Connected");
+});
+
+//This area defines the main p5 area for the code
+function setup() {
+  // a P5 canvas is created and set to cover the range of the screen
+  //createCanvas(circle(windowWidth, windowHeight, windowWidth)); //Failed circle canvas creation
+  //createGraphics(circle(windowWidth, windowHeight, windowWidth)); //Failed circle canvas creation
+  let drawPaper = createCanvas(windowWidth, windowHeight);
+  
+  // The background color is set to white here
+  drawPaper.background(255);
+
+  //Listen for messages named 'data' from the server
+  socket.on('data', function(obj) {
+    //console.log(obj);
+    drawPos(obj);
+  });
+
+  /*
+  //Listen for messages named 'mouse' from the server
+  socket.on('mouse', function(obj) {
+    stroke(data.color);
+    strokeWeight(data.strokeWidth);
+    line(data.x, data.y, data.px, data.py);
+  });
+
+  //Pull out index.html inputs into the p5 layer portion
+  let color_picker = select('#pickcolor');
+	let color_btn = select('#color-btn');
+	let color_holder = select('#color-holder');
+
+	let stroke_width_picker = select('#stroke-width-picker');
+  let stroke_btn = select('#stroke-btn');
+  
+  color_btn.mousePressed(() => {
+    color = color_picker.value()
+    color_holder.style('background-color', color)
+  }); 
+
+  stroke_btn.mousePressed(() => {
+    let width = parseInt(stroke_width_picker.value());
+    if (width > 0) strokeWidth = width
+  }); 
+
+}*/
+
+/*
+function mouseDragged() {
+	// Draw
+	stroke(color)
+	strokeWeight(strokeWidth)
+	line(mouseX, mouseY, pmouseX, pmouseY)
+
+	// Send the mouse coordinates
+	sendmouse(mouseX, mouseY, pmouseX, pmouseY)
+}*/
+
+// Sending data to the socket
+function sendmouse(x, y, pX, pY) {
+	let data = {
+		x: x,
+		y: y,
+		px: pX,
+		py: pY,
+		color: color,
+		strokeWidth: strokeWidth,
+	}
+	socket.emit('mouse', data)
+}
+
+
+function mouseMoved() {
+  //Grab mouse position
+  //let mousePos = { x: mouseX, y: mouseY };
+  let mousePos = { x: mouseX, y: mouseY, px: pmouseX, py: pmouseY };
+
+
+
+	// Send the mouse coordinates
+	sendmouse(mouseX, mouseY, pmouseX, pmouseY)
+  //Send mouse position object to the server
+  //socket.emit('data', mousePos);
+  socket.emit('data', mousePos);
+  //Draw yourself? or Wait for server?
+  // fill(0);
+  // ellipse(mouseX, mouseY 10, 10);
+}
+
+//This section can be used to create the brush drawings
+function drawPos(pos) {
+
+    //Pull out index.html inputs into the p5 layer portion
+    let color_picker = select('#pickcolor');
+    let color_btn = select('#color-btn');
+    let color_holder = select('#color-holder');
+  
+    let stroke_width_picker = select('#stroke-width-picker');
+    let stroke_btn = select('#stroke-btn');
+    
+    color_btn.mousePressed(() => {
+      color = color_picker.value()
+      color_holder.style('background-color', color)
+    }); 
+  
+    stroke_btn.mousePressed(() => {
+      let width = parseInt(stroke_width_picker.value());
+      if (width > 0) strokeWidth = width
+    }); 
+
+  // Draw
+	stroke(color)
+	strokeWeight(strokeWidth)
+
+  //fill(0);
+  fill(strokeWidth);
+  //ellipse(pos.x, pos.y, 10, 10);
+  //circle(pos.x, pos.y, pos.x, 10, 10);
+  //circle(pos.x, pos.y, pos.x, 10, 10);
+  line(pos.x, pos.y, pos.px, pos.py)
+}
+
