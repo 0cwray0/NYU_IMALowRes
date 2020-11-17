@@ -1,0 +1,9 @@
+https://mathuramg.com/IMA-Low-Res-Connections-Lab
+
+Data must be in JSON format...
+
+Shift + Ctrl + F to select all of a thing/key and change them in JSON
+
+https://mathuramg.com/IMA-Low-Res-Connections-Lab/
+https://github.com/search?q=Anime+Dataset
+*Prefer to use an external API for this project...
