@@ -1,0 +1,3 @@
+- Text Output between Program Portions
+- ASL Tensorflow Interpertation Layer
+- 
